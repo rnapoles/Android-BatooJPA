@@ -14,3 +14,4 @@ reports/
 *.log
 *.epoch
 dependency-reduced-pom.xml
+*.bat
