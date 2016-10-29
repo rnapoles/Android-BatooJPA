@@ -107,10 +107,12 @@ public class ConnectionProxy implements Connection {
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public void abort(final Executor executor) throws SQLException {
 		this.connection.abort(executor);
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}
@@ -287,19 +289,23 @@ public class ConnectionProxy implements Connection {
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public int getNetworkTimeout() throws SQLException {
 		return this.connection.getNetworkTimeout();
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public String getSchema() throws SQLException {
 		return this.connection.getSchema();
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}
@@ -559,10 +565,12 @@ public class ConnectionProxy implements Connection {
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
 		this.connection.setNetworkTimeout(executor, milliseconds);
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}
@@ -595,10 +603,12 @@ public class ConnectionProxy implements Connection {
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public void setSchema(String schema) throws SQLException {
 		this.connection.setSchema(schema);
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}

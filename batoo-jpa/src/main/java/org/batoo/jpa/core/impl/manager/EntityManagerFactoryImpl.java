@@ -400,14 +400,17 @@ public class EntityManagerFactoryImpl implements EntityManagerFactory, Serializa
 		try {
 			final Connection connection = this.dataSource.getConnection();
 			try {
+
 				final JdbcAdaptor adapter = AbstractJdbcAdaptor.getAdapter(this.classloader, connection.getMetaData().getDatabaseProductName());
 
 				adapter.setInsertBatchSize(insertBatchSize);
 				adapter.setRemoveBatchSize(removeBatchSize);
 
 				return adapter;
-			}
-			finally {
+			} catch (Exception e) {
+				e.printStackTrace();
+                return null;
+			} finally {
 				connection.close();
 			}
 		}

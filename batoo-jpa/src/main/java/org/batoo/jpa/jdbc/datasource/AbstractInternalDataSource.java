@@ -36,9 +36,9 @@ import org.batoo.common.log.BLoggerFactory;
  * @author lburgazzoli
  * @author asimarslan
  */
-abstract class AbstractInternalDataSource extends AbstractDataSource {
+public abstract class AbstractInternalDataSource extends AbstractDataSource {
 
-	private static final BLogger LOGGER = BLoggerFactory.getLogger(HikariCPDataSource.class);
+	private static final BLogger LOGGER = BLoggerFactory.getLogger(AbstractInternalDataSource.class);
 
 	private DataSource dataSource;
 
@@ -86,10 +86,12 @@ abstract class AbstractInternalDataSource extends AbstractDataSource {
 		return this.dataSource.getLoginTimeout();
 	}
 
+	/*
 	@Override
 	public java.util.logging.Logger getParentLogger() throws SQLFeatureNotSupportedException {
 		return this.dataSource.getParentLogger();
 	}
+	*/
 
 	@Override
 	public boolean isWrapperFor(Class<?> iface) throws SQLException {
@@ -128,7 +130,7 @@ abstract class AbstractInternalDataSource extends AbstractDataSource {
 	 * @return
 	 * @throws Exception
 	 */
-	static Properties cropPrefixFromProperties(Map<String, Object> mapProps, String prefix) throws Exception {
+	static protected Properties cropPrefixFromProperties(Map<String, Object> mapProps, String prefix) throws Exception {
 		Properties cpProps = new Properties();
 		for (String key : mapProps.keySet()) {
 			if (key.startsWith(prefix)) {

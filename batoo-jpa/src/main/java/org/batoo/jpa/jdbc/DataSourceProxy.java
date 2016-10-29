@@ -172,10 +172,12 @@ public class DataSourceProxy implements DataSource {
 	 * {@inheritDoc}
 	 * 
 	 */
+	/*
 	@Override
 	public Logger getParentLogger() throws SQLFeatureNotSupportedException {
 		return this.datasource.getParentLogger();
 	}
+	*/
 
 	/**
 	 * {@inheritDoc}

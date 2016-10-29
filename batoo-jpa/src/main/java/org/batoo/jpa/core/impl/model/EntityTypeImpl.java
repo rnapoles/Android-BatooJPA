@@ -33,7 +33,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javax.naming.directory.BasicAttribute;
+//import javax.naming.directory.BasicAttribute;
 import javax.persistence.InheritanceType;
 import javax.persistence.LockModeType;
 import javax.persistence.PersistenceException;
@@ -251,6 +251,7 @@ public class EntityTypeImpl<X> extends IdentifiableTypeImpl<X> implements Entity
 			return ReflectHelper.createConstructor(constructor);
 		}
 		catch (final Exception e) {
+			e.printStackTrace();
 			throw new RuntimeException("Cannot enhance class: " + this.getJavaType(), e);
 		}
 	}
@@ -1761,7 +1762,7 @@ public class EntityTypeImpl<X> extends IdentifiableTypeImpl<X> implements Entity
 			}
 		}
 
-		this.canBatchRemoves = (this.getVersionAttribute() == null) && this.hasSingleIdAttribute() && (this.getIdMapping() instanceof BasicAttribute);
+		this.canBatchRemoves = (this.getVersionAttribute() == null) && this.hasSingleIdAttribute() /*&& (this.getIdMapping() instanceof BasicAttribute)*/;
 	}
 
 	/**

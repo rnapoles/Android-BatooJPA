@@ -60,11 +60,13 @@ public class ReflectHelper {
 	private static final String GET_PREFIX = "get";
 	private static final String IS_PREFIX = "is";
 
+	/*
 	static final sun.misc.Unsafe unsafe;
 
 	static {
 		unsafe = ReflectHelper.getUnSafe();
 	}
+	*/
 
 	private static Class<?> checkAndReturn(Class<?> originalType, Method m, Class<?> actualType) {
 		if (!originalType.isAssignableFrom(actualType)) {
@@ -139,6 +141,7 @@ public class ReflectHelper {
 	 * @since 2.0.1
 	 */
 	public static ConstructorAccessor createConstructor(Constructor<?> constructor) {
+		/*
 		try {
 			Class.forName("sun.reflect.ConstructorAccessor");
 		}
@@ -147,8 +150,12 @@ public class ReflectHelper {
 		}
 
 		return ReflectHelper.createConstructorImpl(constructor);
+		*/
+        
+		return new SimpleConstructorAccessor(constructor);
 	}
 
+	/*
 	private static ConstructorAccessor createConstructorImpl(Constructor<?> constructor) {
 		try {
 			final Class<?> magClass = Class.forName("sun.reflect.MethodAccessorGenerator");
@@ -173,6 +180,7 @@ public class ReflectHelper {
 			throw new RuntimeException("Constructor generation failed", e);
 		}
 	}
+	*/
 
 	/**
 	 * Returns the qualified name for the member.
@@ -198,7 +206,8 @@ public class ReflectHelper {
 	 */
 	public static AbstractAccessor getAccessor(Member javaMember) {
 		if (javaMember instanceof Field) {
-			return ReflectHelper.unsafe != null ? new UnsafeFieldAccessor((Field) javaMember) : new FieldAccessor((Field) javaMember);
+			//return ReflectHelper.unsafe != null ? new UnsafeFieldAccessor((Field) javaMember) : new FieldAccessor((Field) javaMember);
+			return new FieldAccessor((Field) javaMember);
 		}
 		else {
 			String name = javaMember.getName().startsWith(ReflectHelper.IS_PREFIX) ? javaMember.getName().substring(2) : javaMember.getName().substring(3);
@@ -426,6 +435,7 @@ public class ReflectHelper {
 		}
 	}
 
+	/*
 	private static sun.misc.Unsafe getUnSafe() {
 		try {
 			ReflectHelper.LOG.debug("Loading direct access library....");
@@ -446,6 +456,7 @@ public class ReflectHelper {
 
 		return null;
 	}
+	*/
 
 	/**
 	 * Returns if the <code>type</code> is a collection type.

@@ -59,9 +59,6 @@ public abstract class BaseAnnotatedClassLocator implements AnnotatedClassLocator
 				locator = JarAnnotatedClassLocator.getInstance();
 			}
 		}
-		else if (jarUrl.getProtocol().equals("vfs")) {
-			locator = org.batoo.jpa.parser.impl.acl.JBoss7AnnotatedClassLocator.getInstance();
-		}
 		else {
 			throw new IllegalArgumentException("Unknown jar url protocol: " + jarUrl);
 		}

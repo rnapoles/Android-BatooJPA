@@ -69,9 +69,11 @@ public class BatooPersistenceProvider implements PersistenceProvider {
 		try {
 			final PersistenceParser parser = new org.batoo.jpa.parser.PersistenceParserImpl(info, map);
 
-			return parser.getJtaDataSource() != null ? //
+			/*return parser.getJtaDataSource() != null ? //
 				new org.batoo.jpa.core.impl.manager.JtaEntityManagerFactoryImpl(info.getPersistenceUnitName(), parser) : new EntityManagerFactoryImpl(
 					info.getPersistenceUnitName(), parser);
+			*/
+			return new EntityManagerFactoryImpl(info.getPersistenceUnitName(), parser);
 		}
 		catch (final PersistenceException e) {
 			throw e;
