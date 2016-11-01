@@ -1,4 +1,5 @@
-[![Build Status](https://secure.travis-ci.org/BatooOrg/BatooJPA.png)](http://travis-ci.org/BatooOrg/BatooJPA) Welcome to Batoo JPA - [http://batoo.org](http://batoo.org)
+This is a modified version of Batoo JPA - [https://github.com/BatooOrg/BatooJPA](https://github.com/BatooOrg/BatooJPA)
+that run on Android.
 ___
 # FASTEST JPA IMPLEMENTATION #
 
