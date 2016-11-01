@@ -53,7 +53,7 @@ Batoo JPA has been tested with the following platforms:
 - GlassFish 3.1.2.1
 - Apache TomEE 5.0
 - Apache Tomcat 7.0.x
-
+- Android 4.2.2
 
 ## BUILDING ##
 1. Install Maven 3.0.X if you haven't installed it previously.
